@@ -1,0 +1,36 @@
+name: Apply terraform changes
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  apply:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+
+      # On pull request
+      - uses: dflook/terraform-apply@v1
+        with:
+          variables: |
+            github_token = "${{ secrets.github_token }}"
+        if: ${{ github.event_name == 'pull_request' }}
+      
+      # On workflow dispatch
+      - uses: dflook/terraform-apply@v1
+        with:
+          auto_approve: true
+          variables: |
+            github_token = "${{ secrets.github_token }}"
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+      
+      # Pull, add updated files, commit and push
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Workflow fix
+          add: '--update'
+          committer_name: actions
+          committer_email: actions@github.com
+          pull: '--ff'

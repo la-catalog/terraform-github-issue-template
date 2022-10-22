@@ -5,8 +5,8 @@ resource "github_repository_file" "bug_report" {
   file                = ".github/ISSUE_TEMPLATE/bug_report.md"
   content             = file("./.github/ISSUE_TEMPLATE/bug_report.md")
   commit_message      = "Update bug_report.md"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
 
@@ -17,8 +17,8 @@ resource "github_repository_file" "enhancement_proposal" {
   file                = ".github/ISSUE_TEMPLATE/enhancement_proposal.md"
   content             = file("./.github/ISSUE_TEMPLATE/enhancement_proposal.md")
   commit_message      = "Update enhancement_proposal.md"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
 
@@ -29,8 +29,8 @@ resource "github_repository_file" "feature_proposal" {
   file                = ".github/ISSUE_TEMPLATE/feature_proposal.md"
   content             = file("./.github/ISSUE_TEMPLATE/feature_proposal.md")
   commit_message      = "Update feature_proposal.md"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
 
@@ -41,7 +41,7 @@ resource "github_repository_file" "problem_report" {
   file                = ".github/ISSUE_TEMPLATE/problem_report.md"
   content             = file("./.github/ISSUE_TEMPLATE/problem_report.md")
   commit_message      = "Update problem_report.md"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
